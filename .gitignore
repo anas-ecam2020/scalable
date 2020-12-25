@@ -1,0 +1,9 @@
+# Desktop Services_Store file
+.DS_Store
+
+# vscode settings
+.vscode
+
+# Excluding __MACOSX folder
+
+__MACOSX
