@@ -59,6 +59,7 @@ def receive_data():
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    start = time.perf_counter()
     print('Connecting to server...')
     s.connect((HOST, PORT))
     print('Connected!')
@@ -82,4 +83,5 @@ data.save('mandelbrot.png')
 print('Image successfully saved!')
 
 finish = time.perf_counter()
-print(f'Finished running after seconds:', finish)
+perf = finish - start
+print(f'Finished running after seconds:', perf)

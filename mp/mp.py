@@ -24,6 +24,7 @@ Y = linspace(ymin,ymax,ny) # pixel co-ordinates
 
 # main loops
 if __name__ == '__main__':
+    start = time.perf_counter()
     p = Pool()
     Z = [complex(x,y) for y in Y for x in X]
     N = p.map(mandelbrot,Z)
@@ -35,4 +36,5 @@ if __name__ == '__main__':
     data = im.fromarray((N*255).astype(np.uint16))
     data.save('mandelbrot.png') 
     finish = time.perf_counter()
-    print(f'Finished running after seconds:', finish)
+    perf = finish - start
+    print(f'Finished running after seconds:', perf)
