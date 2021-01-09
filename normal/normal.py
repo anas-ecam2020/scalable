@@ -31,6 +31,7 @@ start = time.perf_counter()
 X = linspace(xmin,xmax,nx) # lists of x and y
 Y = linspace(ymin,ymax,ny) # pixel co-ordinates
 
+
 # main loops
 N = []
 for y in Y:
@@ -38,7 +39,8 @@ for y in Y:
     z  = complex(x,y)
     N += [mandelbrot(z)]
 
-N = reshape(N, (nx,ny)) # change to rectangu
+
+N = reshape(N, (nx,ny)) # change to rectangular
 data = im.fromarray((N*255).astype(np.uint16))
 data.save('mandelbrot.png') 
 
